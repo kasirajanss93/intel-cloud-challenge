@@ -29,6 +29,28 @@ def get_command_output():
         description: Commands not found
     """
     commands = session.query(Command)
+    print(commands)
+    result=session.execute(commands)
+    json_data=json.dumps([dict(r) for r in result])
+    print (len(json_data))
+    return jsonify(json.loads(json_data))
+
+
+@app.route('/commands/<int:command_id>', methods=['GET'])
+def get_command_id(command_id):
+    """
+    Returns as json the command details that have been processed
+    ---
+    tags: [commands]
+    responses:
+      200:
+        description: Commands returned OK
+      400:
+        description: Commands not found
+    """
+    commands = session.query(Command)
+    commands=(str(commands))
+    commands+=" where commands.id={0}".format(command_id)
     result=session.execute(commands)
     json_data=json.dumps([dict(r) for r in result])
     return jsonify(json.loads(json_data))
@@ -53,13 +75,13 @@ def process_commands():
     fi = request.args.get('filename')
     print(fi)
     queue = Queue()
-    get_valid_commands(queue, fi)
-    processes = [Process(target=process_command_output, args=(queue,))
+    get_valid_commands(queue, fi,session)
+    processes = [Process(target=process_command_output, args=(queue,session,))
                  for num in range(2)]
     for process in processes:
         process.start()
-    for process in processes:
-        process.join()
+    #for process in processes:
+    #    process.join()
     return 'Successfully processed commands.'
 
 

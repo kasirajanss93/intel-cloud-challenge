@@ -2,13 +2,12 @@
 Handles the work of validating and processing command input.
 """
 import time
+from datetime import datetime
 import bashlex
 import subprocess
-from db import session, engine
-from threading import Timer
 
-def get_valid_commands(queue, fi):
-    # TODO: efficiently evaluate commands
+
+def get_valid_commands(queue, fi,session):
     flag = False
     cmd_lists = []
     valid = {}
@@ -26,7 +25,7 @@ def get_valid_commands(queue, fi):
             queue.put(command)
 
 
-def process_command_output(queue):
+def process_command_output(queue,session):
     while True:
         print("Inside Process Command")
         if queue.empty():
@@ -36,31 +35,36 @@ def process_command_output(queue):
         command = command.replace('\n', '')
         execute = list(bashlex.split(command))
         if ';' in command:
-            p = subprocess.Popen(command, shell=True,stdout=subprocess.PIPE)
+            p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+            test=datetime.now()
             try:
-                outs=p.communicate(timeout=5)
-                outs=outs[0].decode()
+                start_time = datetime.now()
+                outs = p.communicate(timeout=60)
+                diff = (datetime.now() - start_time).total_seconds()
+                outs = outs[0].decode()
                 print(outs)
                 session.execute(
                     "insert into {0} (command_string,length,duration,output) VALUES ('{1}',{2},{3},'{4}')".format(
                         "commands", command.replace("'", "''"),
-                        len(command), 0, (outs.replace("'", "''"))))
+                        len(command), round(diff,3), (outs.replace("'", "''"))))
             except subprocess.TimeoutExpired:
-                #print("Time: " + str((time.clock() - start)))
                 p.kill()
                 outs=p.communicate()
+                diff=(datetime.now()-start_time).total_seconds()
                 outs=outs[0].decode()
                 print(outs)
                 session.execute(
                     "insert into {0} (command_string,length,duration,output) VALUES ('{1}',{2},{3},'{4}')".format(
                         "commands", command.replace("'","''"),
-                        len(command), 0,outs.replace("'","''")))
+                        len(command),round(diff,3),outs.replace("'","''")))
         else:
+            start_time=datetime.now()
             output = subprocess.check_output(execute)
+            diff=(datetime.now()-start_time).total_seconds()
             output=output.decode()
             print(output)
             session.execute(
                 "insert into {0} (command_string,length,duration,output) VALUES ('{1}',{2},{3},'{4}')".format(
                     "commands", command.replace("'","''"),
-                    len(command), 0, (output.replace("'","''"))))
+                    len(command), round(diff,3), (output.replace("'","''"))))
         session.commit()
