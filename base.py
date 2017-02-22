@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, TEXT
+from sqlalchemy import Column, Integer, String, BLOB
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -11,7 +11,7 @@ class Command(Base):
     length = Column(Integer, nullable=False)
     # store duration of command run time in seconds, rounded to nearest second
     duration = Column(Integer, nullable=False, default=0)
-    output = Column(TEXT)
+    output = Column(BLOB)
 
     def __init__(self, command_string, length, duration, output):
         self.command_string = command_string

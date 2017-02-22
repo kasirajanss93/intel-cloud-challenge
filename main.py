@@ -29,10 +29,17 @@ def get_command_output():
         description: Commands not found
     """
     commands = session.query(Command)
-    print(commands)
     result=session.execute(commands)
-    json_data=json.dumps([dict(r) for r in result])
-    print (len(json_data))
+    json_data=[]
+    for r in result:
+        json_data.append({
+            'id' : r[0],
+            'command_string' : r[1],
+            'length' : r[2],
+            'duration' : r[3],
+            'output' : r[4].decode()
+        })
+    json_data = json.dumps(json_data)
     return jsonify(json.loads(json_data))
 
 
@@ -51,9 +58,19 @@ def get_command_id(command_id):
     commands = session.query(Command)
     commands=(str(commands))
     commands+=" where commands.id={0}".format(command_id)
-    result=session.execute(commands)
-    json_data=json.dumps([dict(r) for r in result])
+    result = session.execute(commands)
+    json_data = []
+    for r in result:
+        json_data.append({
+            'id': r[0],
+            'command_string': r[1],
+            'length': r[2],
+            'duration': r[3],
+            'output': r[4].decode()
+        })
+    json_data = json.dumps(json_data)
     return jsonify(json.loads(json_data))
+    # json_data=json.dumps([dict(r) for r in result])
 
 
 @app.route('/commands', methods=['POST'])

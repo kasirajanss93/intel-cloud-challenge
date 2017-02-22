@@ -39,7 +39,7 @@ def test_full_setup_sync():
     time.sleep(1)
     result=session.execute("select count(*) from commands")
     count=result.fetchone()[0]
-    if count==11:
+    if count==6:
         session.execute("delete from commands")
         session.commit()
         return True
@@ -58,7 +58,7 @@ def test_long_running_command(filename):
     if count==1:
         rows=session.execute("select * from commands")
         for row in rows:
-            if row[3] >= 60:
+            if row[3] == 0:
                 os.remove(filename)
                 session.execute("delete from commands")
                 session.commit()
@@ -77,7 +77,7 @@ def test_extra_command(filename):
     process_commands(filename)
     result = session.execute("select count(*) from commands")
     count=result.fetchone()[0]
-    print(count)
+    #print(count)
     if count==1:
         rows=session.execute("select * from commands")
         for row in rows:
@@ -101,7 +101,7 @@ def test_not_long_command(filename):
     process_commands(filename)
     result = session.execute("select count(*) from commands")
     count=result.fetchone()[0]
-    print(count)
+    #print(count)
     if count==1:
         rows=session.execute("select * from commands")
         for row in rows:

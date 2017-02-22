@@ -1,5 +1,25 @@
 # Nervana Cloud Coding Challenge #
 
+Steps to Run
+
+1. clone the repository from git
+
+2. inside the cloned folder, execute the command make run
+
+3. This will start the server
+
+Operations that can be performed
+
+1. The database can be created using the database resource
+
+	- Operation
+
+
+
+
+
+
+
 You are to build a server that processes valid bash command strings.
 Your server takes the command strings from commands.txt and does the following:
 
