@@ -63,6 +63,7 @@ def test_long_running_command(filename):
                 session.execute("delete from commands")
                 session.commit()
                 return True
+    os.remove(filename)
     session.execute("delete from commands")
     session.commit()
 
@@ -86,6 +87,32 @@ def test_extra_command(filename):
                 session.execute("delete from commands")
                 session.commit()
                 return True
+    os.remove(filename)
+    session.execute("delete from commands")
+    session.commit()
+
+def test_long_command_line(filename):
+    with open(filename,'w') as f:
+        f.write('[COMMAND LIST]\n')
+        f.write('cat -\n')
+        f.write('test command\n')
+        f.write('[VALID COMMANDS]\n')
+        f.write('count=0; while [ $count -le 5 ]; do echo $count; count=$(( $count + 1 )); sleep 1; done\n')
+        f.write('cat -\n')
+        f.write('ls -a\n')
+        f.write('ls -ltr\n')
+    process_commands(filename)
+    result = session.execute("select count(*) from commands")
+    count = result.fetchone()[0]
+    if count == 1:
+        rows = session.execute("select * from commands")
+        for row in rows:
+            if row[3] == 0:
+                os.remove(filename)
+                session.execute("delete from commands")
+                session.commit()
+                return True
+    os.remove(filename)
     session.execute("delete from commands")
     session.commit()
 
@@ -110,6 +137,7 @@ def test_not_long_command(filename):
                 session.execute("delete from commands")
                 session.commit()
                 return True
+    os.remove(filename)
     session.execute("delete from commands")
     session.commit()
 
@@ -130,6 +158,11 @@ if __name__ == '__main__':
         print("Long Running test case Ran Successfully!!")
     except AssertionError:
         print("Long Running test case Ran Failed!!")
+    try:
+        assert test_long_command_line('long_commands_line.txt'), "Failed Test Case"
+        print("Long Running single line test case Ran Successfully!!")
+    except AssertionError:
+        print("Long Running single line test case Ran Failed!!")
     try:
         assert test_full_setup_sync(), "Failed Test Case"
         print("Full Setup test case Ran Successfully!!")

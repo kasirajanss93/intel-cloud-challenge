@@ -1,13 +1,15 @@
 """
 Handles the work of validating and processing command input.
 """
-import time
 from datetime import datetime
 import bashlex
 import subprocess
-import pandas as pd
 from base import Command
 
+"""
+Adds unique list of valid commands to the queue. 
+The file is read line by line, hence the problem of handling for larger file size os taken care 
+"""
 def get_valid_commands(queue, fi,session):
     flag = False
     cmd_lists =[]
@@ -28,7 +30,11 @@ def get_valid_commands(queue, fi,session):
         if valid.get(command):
             queue.put(command)
 
-
+"""
+Executes the command that has beeen added to the queue by get_valid_command method
+If the command execution take more that 60seconds the execution is terminated and duration is marked as 0
+Bash command that are given using ; are handled separately
+"""
 def process_command_output(queue,session):
     while True:
         #print("Inside Process Command")
@@ -45,7 +51,8 @@ def process_command_output(queue,session):
                 start_time = datetime.now()
                 outs = p.communicate(timeout=60)
                 diff = (datetime.now() - start_time).total_seconds()
-                outs = outs[0].decode()
+                if isinstance(outs[0], bytes):
+                    outs = outs[0].decode()
                 #print(outs)
                 value = Command(command.replace("'", "''"), len(command), round(diff,3), bytes(outs.replace("'", "''"), 'utf8'))
                 session.add(value)
@@ -53,16 +60,26 @@ def process_command_output(queue,session):
                 p.kill()
                 outs=p.communicate()
                 diff=(datetime.now()-start_time).total_seconds()
-                outs=outs[0].decode()
+                if isinstance(outs[0],bytes):
+                    outs=outs[0].decode()
                 #print(outs)
                 value = Command(command.replace("'", "''"), len(command), 0,bytes(outs.replace("'","''"),'utf8'))
                 session.add(value)
         else:
-            start_time=datetime.now()
-            output = subprocess.check_output(execute)
-            diff=(datetime.now()-start_time).total_seconds()
-            output=output.decode()
-            #print(output)
-            value = Command(command.replace("'", "''"),len(command),round(diff,3), bytes(output.replace("'","''"),'utf8'))
-            session.add(value)
+            output=""
+            try:
+                start_time=datetime.now()
+                output = subprocess.check_output(execute,timeout=60) #check for timeout
+                diff=(datetime.now()-start_time).total_seconds()
+                if isinstance(output,bytes):
+                    output=output.decode()
+                #print(output)
+                value = Command(command.replace("'", "''"),len(command),round(diff,3), bytes(output.replace("'","''"),'utf8'))
+                session.add(value)
+            except subprocess.TimeoutExpired:
+                print(output)
+                if isinstance(output,bytes):
+                    output=output.decode()
+                value = Command(command.replace("'", "''"), len(command), 0, bytes(output.replace("'", "''"), 'utf8'))
+                session.add(value)
         session.commit()

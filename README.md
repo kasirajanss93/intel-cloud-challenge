@@ -1,6 +1,6 @@
-# Nervana Cloud Coding Challenge #
+# Nervana Cloud Coding Challenge Submission#
 
-Steps to Run
+#Steps to Run
 
 1. clone the repository from git
 
@@ -8,50 +8,66 @@ Steps to Run
 
 3. This will start the server
 
-Operations that can be performed
+#Operations that can be performed
 
 1. The database can be created using the database resource
 
-	- Operation
+	- Resource - /database
+	- Operation - POST
+	- Action - Creates the database
+	- Operation - DELETE
+	- Action - Delete the databse
+
+2. Command resource is used to process commands and view the results of the executed command
+
+	- Resource - /commands
+	- Operation - GET
+	- Action - Outputs the list of commands that has been executed to the user
+	- Operation - POST
+	- Action - post the data with the filename to the server and the server executes the command and stores the result in the database
+
+	- Resource - /commands/<id>
+	- Operation - GET
+	- Action - Outputs the details of the individual command
 
 
+#Outline of the Implemnetaion
 
+	- On POST request the name of the file is obtained from the user, the command_parser.py has methods to get unique list of commands and add it to the queue.
+	- The process_command_output method gets the values that are stored in the queue and process the result one by one. The execution of the command is run in a thread thus processing commands in a concurrent manner
+	- Once the POST method is hit, the execution happends in the thread that is running in the backgroud the processing asynchronously
 
+#Bonus Implementation
 
+	- File that are bigger than memory - Since I read the file line by line, the number of bytes stoed in the memory will be very low and this problem won't occur
+	- Asynchronous command execution - In the Flask's POST method, I am not waiting for all the child threads to complete before returning the output message. In which case the thread will run in the backgroud and complete the task. Therefore, doing a GET request will return the commands that has been process at the point in time
+	- Use file_data or filename - Provision has been done in the code to accept file data, the contents of which be in stored to a file and that is processed. The sample input for file data is below:
 
+	[COMMAND LIST]\nls\npwd\necho "hello there"\n[VALID COMMANDS]\nls\necho "hello there"\npwd
 
-You are to build a server that processes valid bash command strings.
-Your server takes the command strings from commands.txt and does the following:
+#Sample Output
 
-1. Checks that the command strings in the COMMAND_LIST section are valid command strings by cross-checking with the VALID_command strings section. Regardless of the command itself, the command string needs to exactly match a command in the valid command strings list.
-   Ex: `grep "tacos" commands.txt` isn't valid, but `grep "pwd" commands.txt` is.
+	- GET 127.0.0.1:8080/commands
+		- [
+  			{
+    			"command_string": "ls",
+    			"duration": 0.013,
+    			"id": 1,
+    			"length": 2,
+    			"output": "Makefile\nREADME.md\n__pycache__\nbase.py\ncommand_parser.py\ncommands.db\ncommands.txt\ncommands_data.txt\ndb.py\nmain.py\nrequirements.txt\ntest.py\n"
+  			},
+  			{
+    			"command_string": "pwd",
+    			"duration": 0.009,
+    			"id": 2,
+    			"length": 3,
+    			"output": "/Users/kasi-mac/KasiThings/ASU/projects/intel/cloud_code_challenge\n"
+  			}
+  		  ]
 
-Assuming the command is valid:
-2. Stores metadata about each command:
-    - actual command itself as a string
-    - length of command string
-    - time to complete (up to 1 min, else mark as 0)
-    - eventual output (see below)
-3. Grabs the command output from each command if possible.
-4. Stores the output in the db provided.
-5. Enables the data to be fetched via the endpoint provided in the code.
+  	- POST 127.0.0.1:8080/commands?filename=commands.txt
+  		- Successfully processed commands.
 
-The basics of the project have already been flushed out for you.
-Approach this project as if this were production code, with time and space complexity in mind.
-Also keep in mind edge cases; what about command strings that don't terminate in time? Invalid bash and "malicious" command strings have already been screened out for you.
-Write a few tests for your code as well.
-Finally, when you're done, send us the link to where we can see the code on your Github/Bitbucket/etc.
-Good luck!
+  	- POST 127.0.0.1:8080/commands?file_data=[COMMAND LIST]\nls\npwd\necho "hello there"\n[VALID COMMANDS]\nls\necho "hello there"\npwd
+  		-Successfully processed commands.
 
-## Full-time challenge ##
-In addition to the main challenge above, extend your project with the following:
-
-Regarding #3, Grabs all command strings at once and queue them up to be run, and then run each of them individually inside their own docker container (for isolation).
-Some tools that might prove useful: Redis, Celery, bashlex, htcondor/Kubernetes, PostgreSQL/MySQL/MongoDB, Docker, cronjobs, python's `schedule` module, bash.
-When you're done, host it and send us the link of where it's at!
-
-
-### For how to run either project ###
-1. `make run` to start the project; see the `Makefile` for other helpful things like `make swagger`
-2. You can then hit it to either drop the db, init the db, fetch results, input data (curl or python requests).
-   - Sample request to feed in the data: requests.post("http://127.0.0.1:8080/commands", params={'filename': 'commands.txt'})

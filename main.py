@@ -11,9 +11,8 @@ import json
 from db import session, engine
 from base import Base, Command
 from command_parser import get_valid_commands, process_command_output
-
+import os
 app = Flask(__name__)
-#app.config['APPLICATION_ROOT'] = '/Users/kasi-mac/KasiThings/ASU/projects/intel/cloud_code_challenge'
 
 
 @app.route('/commands', methods=['GET'])
@@ -39,6 +38,8 @@ def get_command_output():
             'duration' : r[3],
             'output' : r[4].decode()
         })
+    if not json_data:
+        return "Commands not found"
     json_data = json.dumps(json_data)
     return jsonify(json.loads(json_data))
 
@@ -68,6 +69,8 @@ def get_command_id(command_id):
             'duration': r[3],
             'output': r[4].decode()
         })
+    if not json_data:
+        return "Commands not found"
     json_data = json.dumps(json_data)
     return jsonify(json.loads(json_data))
     # json_data=json.dumps([dict(r) for r in result])
@@ -91,6 +94,17 @@ def process_commands():
     """
     fi = request.args.get('filename')
     print(fi)
+    file_data = request.args.get('file_data')
+    print(file_data)
+    if file_data is not None:
+        fi="commands_data.txt"
+        with open(fi,'w') as f:
+            file_data=file_data.split("\\n")
+            print(file_data)
+            for data in file_data:
+                f.write(data+"\n")
+    if fi is None:
+        return "Processing Error"
     queue = Queue()
     get_valid_commands(queue, fi,session)
     processes = [Process(target=process_command_output, args=(queue,session,))
@@ -99,6 +113,9 @@ def process_commands():
         process.start()
     #for process in processes:
     #    process.join()
+    if file_data is not None:
+        os.remove("commands_data.txt")
+        pass
     return 'Successfully processed commands.'
 
 
