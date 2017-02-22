@@ -106,7 +106,7 @@ def process_commands():
     if fi is None:
         return "Processing Error"
     queue = Queue()
-    get_valid_commands(queue, fi,session)
+    get_valid_commands(queue, fi)
     processes = [Process(target=process_command_output, args=(queue,session,))
                  for num in range(2)]
     for process in processes:

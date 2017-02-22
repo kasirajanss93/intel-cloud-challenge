@@ -10,7 +10,7 @@ from base import Command
 Adds unique list of valid commands to the queue. 
 The file is read line by line, hence the problem of handling for larger file size os taken care 
 """
-def get_valid_commands(queue, fi,session):
+def get_valid_commands(queue, fi):
     flag = False
     cmd_lists =[]
     cmd_set=set()
@@ -77,7 +77,7 @@ def process_command_output(queue,session):
                 value = Command(command.replace("'", "''"),len(command),round(diff,3), bytes(output.replace("'","''"),'utf8'))
                 session.add(value)
             except subprocess.TimeoutExpired:
-                print(output)
+                #print(output)
                 if isinstance(output,bytes):
                     output=output.decode()
                 value = Command(command.replace("'", "''"), len(command), 0, bytes(output.replace("'", "''"), 'utf8'))

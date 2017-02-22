@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="982db96f-dea5-47ab-9fde-2398e500f88d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/command_parser.py" afterPath="$PROJECT_DIR$/command_parser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
@@ -17,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/cloud_code_challenge$command_parser.coverage" NAME="command_parser Coverage Results" MODIFIED="1487580233727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/cloud_code_challenge$test.coverage" NAME="test Coverage Results" MODIFIED="1487744783233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cloud_code_challenge$test.coverage" NAME="test Coverage Results" MODIFIED="1487751400862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cloud_code_challenge$cloud_code_challenge.coverage" NAME="cloud_code_challenge Coverage Results" MODIFIED="1487645595213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -50,8 +48,8 @@
       <file leaf-file-name="command_parser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/command_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+            <state relative-caret-position="400">
+              <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
               <folding>
                 <element signature="e#69#98#0" expanded="true" />
               </folding>
@@ -59,43 +57,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
+            <state relative-caret-position="-2090">
+              <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-                <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-                <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-                <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-                <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-                <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+                <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+                <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+                <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+                <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+                <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="116" column="8" lean-forward="false" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="108" column="32" lean-forward="false" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
               <folding>
                 <element signature="e#126#168#0" expanded="true" />
               </folding>
@@ -165,9 +163,9 @@
         <option value="$PROJECT_DIR$/db.py" />
         <option value="$PROJECT_DIR$/not_long_commands.txt" />
         <option value="$PROJECT_DIR$/base.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/command_parser.py" />
-        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -567,26 +565,26 @@
           <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -661,26 +659,26 @@
           <caret line="104" column="16" lean-forward="true" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -793,26 +791,26 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -839,26 +837,26 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -935,26 +933,26 @@
           <caret line="9" column="39" lean-forward="false" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -1079,52 +1077,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="151" column="8" lean-forward="false" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="108" column="32" lean-forward="false" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <marker date="1487741447000" expanded="true" signature="1093:1122" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1198:1218" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1204:1218" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1287:1307" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="1692:1721" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1802:1824" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="1949:1969" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2078:2098" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2433:2462" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="2561:2583" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="2714:2734" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="2843:2863" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3348:3377" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="3464:3486" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="3611:3631" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="3740:3760" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4299:4328" ph="select count... commands" />
-            <marker date="1487741447000" expanded="true" signature="4427:4449" ph="select * fro... commands" />
-            <marker date="1487741447000" expanded="true" signature="4589:4609" ph="delete from " />
-            <marker date="1487741447000" expanded="true" signature="4718:4738" ph="delete from " />
+            <element signature="e#126#168#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/command_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+        <state relative-caret-position="400">
+          <caret line="84" column="24" lean-forward="true" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
           <folding>
             <element signature="e#69#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="116" column="8" lean-forward="false" selection-start-line="116" selection-start-column="8" selection-end-line="116" selection-end-column="8" />
+        <state relative-caret-position="-2090">
+          <caret line="32" column="49" lean-forward="false" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
           <folding>
-            <element signature="e#126#168#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
+            <marker date="1487751397000" expanded="true" signature="1235:1264" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1340:1360" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1346:1360" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="1429:1449" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="1916:1945" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2026:2048" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2173:2193" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2302:2322" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="2743:2772" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="2871:2893" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="3024:3044" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3153:3173" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="3771:3800" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="3887:3909" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="4034:4054" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4163:4183" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="4827:4856" ph="select count... commands" />
+            <marker date="1487751397000" expanded="true" signature="4955:4977" ph="select * fro... commands" />
+            <marker date="1487751397000" expanded="true" signature="5117:5137" ph="delete from " />
+            <marker date="1487751397000" expanded="true" signature="5246:5266" ph="delete from " />
           </folding>
         </state>
       </provider>

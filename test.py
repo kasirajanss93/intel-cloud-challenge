@@ -9,21 +9,28 @@ import os
 engine = create_engine('sqlite:///commands_test.db')
 session = sessionmaker(bind=engine)()
 
-
+"""
+Function to create db
+"""
 def make_db():
     Base.metadata.create_all(engine)
     return 'Database creation successful.'
 
 
+"""
+Function to drop db
+"""
 def drop_db():
     Base.metadata.drop_all(engine)
     return 'Database deletion successful.'
 
-
+"""
+Function to process command
+"""
 def process_commands(filename):
     try:
         queue = Queue()
-        Parser.get_valid_commands(queue, filename, session)
+        Parser.get_valid_commands(queue, filename)
         processes = [Process(target=Parser.process_command_output, args=(queue,session,))
                      for num in range(2)]
         for process in processes:
@@ -34,6 +41,9 @@ def process_commands(filename):
     except Exception as detail:
         print('Exception raised' + detail)
 
+"""
+Function to run tests against the given full setup
+"""
 def test_full_setup_sync():
     process_commands("commands.txt")
     time.sleep(1)
@@ -46,6 +56,9 @@ def test_full_setup_sync():
     session.execute("delete from commands")
     session.commit()
 
+"""
+Function to run tests against the commands that takes more than 60 to run
+"""
 def test_long_running_command(filename):
     with open(filename,'w') as f:
         f.write('[COMMAND LIST]\n')
@@ -67,6 +80,9 @@ def test_long_running_command(filename):
     session.execute("delete from commands")
     session.commit()
 
+"""
+Function to run tests against the commands that are not given in the testcase
+"""
 def test_extra_command(filename):
     with open(filename,'w') as f:
         f.write('[COMMAND LIST]\n')
@@ -91,6 +107,10 @@ def test_extra_command(filename):
     session.execute("delete from commands")
     session.commit()
 
+
+"""
+Function to run tests against the commands that takes more than 60sec to run (cat -) commands without ;
+"""
 def test_long_command_line(filename):
     with open(filename,'w') as f:
         f.write('[COMMAND LIST]\n')
@@ -116,6 +136,10 @@ def test_long_command_line(filename):
     session.execute("delete from commands")
     session.commit()
 
+
+"""
+Function to run tests against the commands that takes more than 5sec and less than 60sec to run
+"""
 def test_not_long_command(filename):
     with open(filename,'w') as f:
         f.write('[COMMAND LIST]\n')
@@ -141,6 +165,9 @@ def test_not_long_command(filename):
     session.execute("delete from commands")
     session.commit()
 
+"""
+Main method
+"""
 if __name__ == '__main__':
     print(make_db())
     try:
