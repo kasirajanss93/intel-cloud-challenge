@@ -18,14 +18,13 @@ def get_valid_commands(queue, fi):
     with open(fi, 'r') as f:
         for line in f:
             if flag is False and "[COMMAND LIST]" not in line:
-                if "[VALID COMMANDS]" not in line and line not in cmd_set:
-                    cmd_lists.append(line)
-                    cmd_set.add(line)
+                if "[VALID COMMANDS]" not in line and line.replace('\n', '') not in cmd_set:
+                    cmd_lists.append(line.replace('\n', ''))
+                    cmd_set.add(line.replace('\n', ''))
             else:
-                valid[line] = True
+                valid[line.replace('\n', '')] = True
             if "[VALID COMMANDS]" in line:
                 flag = True
-    print(cmd_lists)
     for command in cmd_lists:
         if valid.get(command):
             queue.put(command)
@@ -41,7 +40,7 @@ def process_command_output(queue,session):
         if queue.empty():
             break
         command = queue.get()
-        #print(command)
+        print(command)
         command = command.replace('\n', '')
         execute = list(bashlex.split(command))
         if ';' in command:
@@ -65,6 +64,8 @@ def process_command_output(queue,session):
                 #print(outs)
                 value = Command(command.replace("'", "''"), len(command), 0,bytes(outs.replace("'","''"),'utf8'))
                 session.add(value)
+            except subprocess.CalledProcessError:
+                pass
         else:
             output=""
             try:
@@ -82,4 +83,6 @@ def process_command_output(queue,session):
                     output=output.decode()
                 value = Command(command.replace("'", "''"), len(command), 0, bytes(output.replace("'", "''"), 'utf8'))
                 session.add(value)
+            except subprocess.CalledProcessError:
+                pass
         session.commit()

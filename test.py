@@ -49,7 +49,7 @@ def test_full_setup_sync():
     time.sleep(1)
     result=session.execute("select count(*) from commands")
     count=result.fetchone()[0]
-    if count==6:
+    if count==7:
         session.execute("delete from commands")
         session.commit()
         return True
@@ -172,28 +172,28 @@ if __name__ == '__main__':
     print(make_db())
     try:
         assert test_extra_command('extra_commands.txt'), "Failed Test Case"
-        print("Extra Command test case Ran Successfully!!")
+        print("Extra Command test case ran Successfully!!")
     except AssertionError:
-        print("Extra Command test case Ran Failed!!")
+        print("Extra Command test case Failed!!")
     try:
         assert test_not_long_command('not_long_commands.txt'), "Failed Test Case"
-        print("Not Long Command test case Ran Successfully!!")
+        print("Not Long Command test case ran Successfully!!")
     except AssertionError:
-        print("Not Long Command test case Ran Failed!!")
+        print("Not Long Command test case Failed!!")
     try:
         assert test_long_running_command('long_commands.txt'), "Failed Test Case"
-        print("Long Running test case Ran Successfully!!")
+        print("Long Running test case ran Successfully!!")
     except AssertionError:
-        print("Long Running test case Ran Failed!!")
+        print("Long Running test case Failed!!")
     try:
         assert test_long_command_line('long_commands_line.txt'), "Failed Test Case"
-        print("Long Running single line test case Ran Successfully!!")
+        print("Long Running single line test case ran Successfully!!")
     except AssertionError:
-        print("Long Running single line test case Ran Failed!!")
+        print("Long Running single line test case Failed!!")
     try:
         assert test_full_setup_sync(), "Failed Test Case"
-        print("Full Setup test case Ran Successfully!!")
+        print("Full Setup test case ran Successfully!!")
     except AssertionError:
-        print("Full Setup test case Ran Failed!!")
+        print("Full Setup test case Failed!!")
     print(drop_db())
     os.remove('commands_test.db')

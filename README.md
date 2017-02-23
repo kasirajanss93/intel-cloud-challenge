@@ -10,7 +10,7 @@
 
 #Operations that can be performed
 
-1. The database can be created using the database resource
+1. The database can be created and dropped using the database resource
 
 	- Resource - /database
 	- Operation - POST
@@ -26,16 +26,25 @@
 	- Operation - POST
 	- Action - post the data with the filename to the server and the server executes the command and stores the result in the database
 
-	- Resource - /commands/<id>
+	- Resource - /commands/<id> -> added by me
 	- Operation - GET
 	- Action - Outputs the details of the individual command
 
 
 #Outline of the Implemnetaion
 
-	- On POST request the name of the file is obtained from the user, the command_parser.py has methods to get unique list of commands and add it to the queue.
+	- On POST request the name of the file is obtained from the user, the command_parser.py has method get_valid_commands to get unique list of commands and add it to the queue.
 	- The process_command_output method gets the values that are stored in the queue and process the result one by one. The execution of the command is run in a thread thus processing commands in a concurrent manner
-	- Once the POST method is hit, the execution happends in the thread that is running in the backgroud the processing asynchronously
+	- Once the POST method is hit, the execution happends in the thread that is running in the background hence it process the request asynchronously
+
+#Test Cases
+	- The test cases are found in the test.py file
+	- The following testcase are written
+		- Testcase to check if commands other than the one's given in the file are executed
+		- Testcase to check if the commands that takes longer time but less than a minute is executed correctly
+		- Testcase to check if the commands that are beyond a minute are executed successfully
+		- Testcase to check if the commands that are beyond a minute and are executed with ; in between are executed successfully
+		- Testcase to check if all the commands in the given commands.txt is executed successfully
 
 #Bonus Implementation
 
@@ -44,9 +53,12 @@
 	- Use file_data or filename - Provision has been done in the code to accept file data, the contents of which be in stored to a file and that is processed. The sample input for file data is below:
 
 	[COMMAND LIST]\nls\npwd\necho "hello there"\n[VALID COMMANDS]\nls\necho "hello there"\npwd
+	- Added a GET request 127.0.0.1:8080/commands/<id> to view metadata of the individual command 
 
 #Sample Output
 
+	- Used postman to execute the following endpoints
+	
 	- GET 127.0.0.1:8080/commands
 		- [
   			{
@@ -64,6 +76,17 @@
     			"output": "/Users/kasi-mac/KasiThings/ASU/projects/intel/cloud_code_challenge\n"
   			}
   		  ]
+
+  	- GET 127.0.0.1:8080/commands/2
+  		- 	[
+  			{
+    			"command_string": "pwd",
+    			"duration": 0.009,
+    			"id": 2,
+    			"length": 3,
+    			"output": "/Users/kasi-mac/KasiThings/ASU/projects/intel/cloud_code_challenge\n"
+  			}
+  		  ]  
 
   	- POST 127.0.0.1:8080/commands?filename=commands.txt
   		- Successfully processed commands.

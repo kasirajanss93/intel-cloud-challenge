@@ -108,7 +108,7 @@ def process_commands():
     queue = Queue()
     get_valid_commands(queue, fi)
     processes = [Process(target=process_command_output, args=(queue,session,))
-                 for num in range(2)]
+                 for num in range(3)]
     for process in processes:
         process.start()
     #for process in processes:
